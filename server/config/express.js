@@ -7,9 +7,11 @@ var path = require('path'),
     listingsRouter = require('../routes/listings.server.routes'), 
     getCoordinates = require('../controllers/coordinates.server.controller.js');
 
+
+
 module.exports.init = function() {
   //connect to database
-  mongoose.connect(config.db.uri);
+  mongoose.connect(process.env.uri);
 
   //initialize app
   var app = express();
